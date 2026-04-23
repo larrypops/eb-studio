@@ -8,7 +8,7 @@ const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
 };
 
 const staggerContainer = {
@@ -31,7 +31,7 @@ export default function Contact() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
             className="text-5xl md:text-8xl font-bold tracking-tighter uppercase mb-8"
           >
             Contact Us
@@ -39,7 +39,7 @@ export default function Contact() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] as const }}
             className="text-xl text-gray-400 leading-relaxed max-w-2xl"
           >
             Have a project, event, or photo session in mind?

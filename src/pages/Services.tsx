@@ -8,7 +8,7 @@ const fadeInUp = {
   initial: { opacity: 0, y: 30 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+  transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] as const },
 };
 
 const staggerContainer = {
@@ -38,7 +38,7 @@ export default function Services() {
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
             className="text-5xl md:text-7xl font-bold tracking-tighter uppercase mb-8"
           >
             Our Services
@@ -46,7 +46,7 @@ export default function Services() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] as const }}
             className="text-xl text-gray-400 leading-relaxed max-w-2xl"
           >
             We provide professional photography and video services tailored to your needs.
@@ -61,7 +61,7 @@ export default function Services() {
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
               className={`grid md:grid-cols-2 gap-16 items-center ${
                 index % 2 === 1 ? "md:flex-row-reverse" : ""
               }`}
@@ -122,7 +122,7 @@ export default function Services() {
           initial={{ scale: 0.95, opacity: 0 }}
           whileInView={{ scale: 1, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as const }}
           className="mt-32 text-center bg-zinc-950 rounded-[3rem] py-24 border border-zinc-900"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-8 uppercase tracking-widest">
