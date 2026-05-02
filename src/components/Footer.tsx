@@ -4,6 +4,8 @@ import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
 import { STUDIO_INFO, WHATSAPP_URL } from "@/constants";
 
 export default function Footer() {
+  const hasSocialLinks = Boolean(STUDIO_INFO.socials.instagram || STUDIO_INFO.socials.facebook);
+
   return (
     <footer className="bg-black text-white py-16 border-t border-gray-900">
       <div className="container mx-auto px-6">
@@ -23,14 +25,32 @@ export default function Footer() {
               Capturing your most important moments with clarity, creativity, and lasting quality.
               Based in Yaounde, serving the world.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="Instagram">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="hover:text-gray-300 transition-colors" aria-label="Facebook">
-                <Facebook size={20} />
-              </a>
-            </div>
+            {hasSocialLinks && (
+              <div className="flex gap-4">
+                {STUDIO_INFO.socials.instagram && (
+                  <a
+                    href={STUDIO_INFO.socials.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-300 transition-colors"
+                    aria-label="Instagram"
+                  >
+                    <Instagram size={20} />
+                  </a>
+                )}
+                {STUDIO_INFO.socials.facebook && (
+                  <a
+                    href={STUDIO_INFO.socials.facebook}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-gray-300 transition-colors"
+                    aria-label="Facebook"
+                  >
+                    <Facebook size={20} />
+                  </a>
+                )}
+              </div>
+            )}
           </div>
 
           <div>

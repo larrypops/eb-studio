@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import { Phone, Mail, MapPin, MessageSquare } from "lucide-react";
 import { STUDIO_INFO, WHATSAPP_URL } from "@/constants";
 
@@ -114,9 +115,11 @@ export default function Contact() {
             className="h-full"
           >
             <div className="relative aspect-[4/5] md:aspect-auto md:h-full bg-zinc-900 rounded-[3rem] overflow-hidden grayscale opacity-50 hover:opacity-100 hover:grayscale-0 transition-all duration-1000 border border-zinc-800">
-              <img
+              <Image
                 src="/images/birthday/IMG_4850.jpg"
                 alt="Contact location"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent flex items-end p-12">

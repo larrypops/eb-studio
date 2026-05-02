@@ -3,6 +3,11 @@ export const STUDIO_INFO = {
   phone: "+237 6 74 17 12 41",
   email: "ernestbros14@gmail.com",
   location: "Biyem-Assi, Yaounde, Cameroon",
+  website: "https://eb-studio.vercel.app",
+  socials: {
+    instagram: "",
+    facebook: "",
+  },
   whatsappMessage:
     "Hello, I am interested in your photography and video services. I would like more information about your availability and pricing.",
 };

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { useState } from "react";
@@ -42,9 +43,12 @@ export default function Home() {
           transition={{ duration: 5, ease: "easeOut" }}
           className="absolute inset-0 z-0"
         >
-          <img
+          <Image
             src="/images/weddings/IMG_4860.jpg"
-            alt="Hero Wedding"
+            alt="Wedding photography by Ernest and Bros Studio"
+            fill
+            priority
+            sizes="100vw"
             className="w-full h-full object-cover opacity-50 grayscale hover:grayscale-0 transition-all duration-1000"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
@@ -172,9 +176,11 @@ export default function Home() {
                   transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] as const }}
                   className="relative aspect-square overflow-hidden rounded-xl group cursor-crosshair"
                 >
-                  <img
+                  <Image
                     src={img.url}
                     alt={img.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
@@ -218,9 +224,11 @@ export default function Home() {
                 key={service.id}
                 className="group relative h-96 overflow-hidden rounded-2xl cursor-pointer"
               >
-                <img
+                <Image
                   src={service.image}
                   alt={service.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
@@ -270,7 +278,13 @@ export default function Home() {
               transition={{ duration: 1 }}
               className="relative aspect-square rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700"
             >
-              <img src="/images/professional/IMG_4864.jpg" alt="Our Team" className="w-full h-full object-cover" />
+              <Image
+                src="/images/professional/IMG_4864.jpg"
+                alt="Ernest and Bros Studio team portrait"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-full object-cover"
+              />
             </motion.div>
           </div>
         </div>

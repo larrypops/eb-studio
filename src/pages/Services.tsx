@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 import { SERVICES, WHATSAPP_URL } from "@/constants";
 
@@ -72,9 +73,11 @@ export default function Services() {
                 className={`${index % 2 === 1 ? "md:order-2" : ""}`}
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-3xl group">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />

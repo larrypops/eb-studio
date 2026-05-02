@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 import { STUDIO_INFO } from "@/constants";
 
 const fadeInUp = {
@@ -69,11 +70,13 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 1 }}
-              className="aspect-[3/4] rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000"
+              className="relative aspect-[3/4] rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000"
             >
-              <img
+              <Image
                 src="/images/professional/IMG_4863.jpg"
-                alt="About us"
+                alt="Creative portrait session by Ernest and Bros Studio"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="w-full h-full object-cover transition-transform duration-[2s] hover:scale-105"
               />
             </motion.div>

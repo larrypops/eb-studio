@@ -26,6 +26,15 @@ Prerequisites: Node.js 20+ and npm.
 - Static images are in `public/images`.
 - Header logo, footer logo, and favicon are sourced from the local `images` folder content.
 
+## SEO Setup
+
+- Set `NEXT_PUBLIC_SITE_URL` in Vercel (example: `https://your-domain.com`) so canonical URLs, sitemap, and robots use your real domain.
+- Built-in SEO files are generated from App Router:
+  - `/robots.txt`
+  - `/sitemap.xml`
+  - `/manifest.webmanifest`
+- Global metadata includes Open Graph, Twitter cards, canonical tags, and Schema.org structured data (`WebSite` + `ProfessionalService`).
+
 ## Vercel Deployment
 
 Use these settings in Vercel:
